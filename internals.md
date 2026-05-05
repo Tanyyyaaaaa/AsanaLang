@@ -12,3 +12,25 @@
 Мы используем структуру данных `Env`, которая представляет собой стек фреймов. Это позволяет реализовывать:
 * **Lexical Scoping**: Функции видят переменные из места своего определения.
 * **Recursion**: Специальный механизм в `samsara` позволяет функции ссылаться на саму себя в новом фрейме.
+
+## 🌳 Абстрактное синтаксическое дерево (AST)
+
+```fsharp
+type Expr =
+
+    | Mountain of int
+    | Water of float
+    | Mantra of string
+
+    | Balance of bool
+    | Aura of string
+    | Forest of Expr list
+
+    | BinaryOp of string * Expr * Expr
+    | Asana of string * string list * Expr
+    | Mudra of string list * Expr
+
+    | Samsara of Expr
+    | IfCalm of Expr * Expr * Expr
+    | Call of Expr * Expr list
+```
